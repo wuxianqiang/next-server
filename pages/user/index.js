@@ -1,7 +1,7 @@
 import { withRouter } from 'next/router'
 import { Layout, Menu, Icon } from 'antd'
 import Link from 'next/link'
-const { Sider, Content } = Layout
+const { Content } = Layout
 function UserLayout(props) {
   let { pathname } = props.router
   return (

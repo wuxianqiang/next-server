@@ -13,7 +13,14 @@ function UserList(props) {
           footer={<div>Footer</div>}
           bordered
           dataSource={props.list}
-          renderItem={item => <List.Item>{item.username}</List.Item>}
+          renderItem={
+            item => <List.Item>
+              <Link href={{ pathname: '/user/detail', query: { id: item.id } }}>
+                <a href="">
+                  {item.username}
+                </a>
+              </Link>
+            </List.Item>}
         />
       </div>
     </UserLayout>
