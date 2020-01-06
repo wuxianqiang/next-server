@@ -1,6 +1,7 @@
 import { List } from 'antd'
 import UserLayout from './index'
 import Link from 'next/link'
+import axios from '../../utils/axios'
 
 function UserList(props) {
   return (
@@ -19,9 +20,10 @@ function UserList(props) {
   )
 }
 UserList.getInitialProps = async (ctx) => {
-  let list = [{ username: '张三', id: 1 }]
+  // let list = [{ username: '张三', id: 1 }]
   // 返回值将会成为当前组件的属性对象
-  return { list }
+  let res = await axios.get('/user/list')
+  return { list: res.data.data }
 }
 
 export default UserList

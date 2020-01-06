@@ -7,6 +7,13 @@ import './base.css'
 import {withRouter} from 'next/router'
 
 class LayoutApp extends App {
+  // static async getInitialProps ({Component, ctx}) {
+  //   let pageProps = {}
+  //   if (Component.getInitialProps) {
+  //     pageProps = await Component.getInitialProps()
+  //   }
+  //   return {pageProps}
+  // }
   render() {
     let {Component, pageProps} = this.props
     let {pathname} = this.props.router
